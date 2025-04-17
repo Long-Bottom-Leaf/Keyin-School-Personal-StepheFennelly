@@ -1,0 +1,82 @@
+# Description:
+# Author:
+# Dates:
+
+
+# Define required libraries
+
+
+
+# Define constants
+
+
+
+
+# Define program functions
+
+
+
+
+# Main program starts here
+
+while True:
+    
+    # Gather user inputs
+    while True:
+        CustName = input("Enter the customer name: ")
+
+        if CustName == "":
+            print()
+            print("     User Entry Error - Customer name cannot be blank.")
+            print()
+        else:
+            break
+    while True:
+        AfterHours = input("Was the job completed after hours (Y/N): ").upper()
+        
+
+        if AfterHours == "":
+            print()
+            print("     User Entry Error - After hours response cannot be blank.")
+            print()
+        elif AfterHours != "Y" and AfterHours != "N":
+            print()
+            print("     User Entry Error - After hours response must be Y or N.")
+            print()
+        else:
+            break
+
+    while True:
+        # The try statements will try to complete the steps.
+        try:
+            Hours = int(input("Enter the number of hours to complete the work: "))
+        except:
+            # If the code produces an error - based on the int() - generally due to the value not being a valid integer.
+            print()
+            print("     User Entry Error - Hours must be a valid number.")
+            print()
+        else:
+            # If you need to check a range, do it here.
+            if Hours < 1 or Hours > 20:
+                print()
+                print("     User Entry Error - Hours must be between 1 and 20.")
+                print()
+            else:
+                break
+            # If there is no range to check, just put a break in the else.
+
+# Perfrom required calculations
+
+
+
+# Display results
+
+
+
+# Write the values to a data file for starage
+
+
+
+
+
+# Any housekeeping duties at the end of the program
