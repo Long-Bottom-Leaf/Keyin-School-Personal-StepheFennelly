@@ -1,0 +1,171 @@
+# Description:
+# Author:
+# Dates:
+
+
+# Define required libraries
+
+
+
+# Define constants
+
+
+
+
+# Define program functions
+
+
+
+
+# Main program starts here
+while True:
+
+    # Gather user inputs
+    allowed_char = set("ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz.-'")
+    AllowedCharNum = set("ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz-'0123456789.-'")
+    AllowedUpperCharNum = set("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
+    AllowedUpperChar = set("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+    AllowedNum = set("0123456789")
+
+    while True:
+        CustName = input("Enter the customer name: ")
+
+        if CustName == "":
+            print()
+            print("     User Entry Error - Customer name cannot be blank.")
+            print()
+        elif set(CustName).issubset(allowed_char) == False:
+            # Every character in the name must be in the set of allowed characters.
+            print()
+            print("     User Entry Error - Customer name contains invalid characters.")
+            print()
+        else:
+            break
+    
+    while True:
+        StAdd = input("Enter the customer street address: ")
+        if StAdd == "":
+            print()
+            print("     User Entry Error - Street address cannot be blank.")
+            print()
+        elif set(StAdd).issubset(AllowedCharNum) == False:
+            # Every character in the name must be in the set of allowed characters.
+            print()
+            print("     User Entry Error - Street address contains invalid characters.")
+            print()
+        else:
+            break
+
+    while True:
+        City = input("Enter the customer city: ")
+        if City == "":
+            print()
+            print("     User Entry Error - City cannot be blank.")
+            print()
+        elif set(City).issubset(allowed_char) == False:
+            # Every character in the name must be in the set of allowed characters.
+            print()
+            print("     User Entry Error - City contains invalid characters.")
+            print()
+        else:
+            break
+
+    while True:
+        Prov = input("Enter the customer province (XX): ").upper()
+        if StAdd == "":
+            print()
+            print("     User Entry Error - Province cannot be blank.")
+            print()
+        elif set(Prov).iBssubset(AllowedUpperChar) == False:
+            # Every character in the name must be in the set of allowed characters.
+            print()
+            print("     User Entry Error - Province contains invalid characters.")
+            print()
+        elif Prov != "NL" and Prov != "PE" and Prov != "NS" and Prov != "NB":
+            print()
+            print("     User Entry Error - Customer province is not valid.")
+            print()
+        else:
+            break
+
+    while True:
+        PostCode = input("Enter the customer postal code (XOXOXO): ").upper()
+        if PostCode == "":
+            print()
+            print("     User Entry Error - Postal code cannot be blank.")
+            print()
+        elif set(PostCode).issubset(AllowedUpperCharNum) == False:
+            # Every character in the name must be in the set of allowed characters.
+            print()
+            print("     User Entry Error - Postal code contains invalid characters.")
+            print()
+        else:
+            break
+
+    while True:
+        Phone = input("Enter the customer phone number (XXXXXXXXXX): ")
+        if Phone == "":
+            print()
+            print("     User Entry Error - Phone number cannot be blank.")
+            print()
+        # Use the len() function to count the number of characters in a string.
+        elif len(Phone) != 10:
+            print()
+            print("     User Entry Error - Phone number must be 10 characters long.")
+            print()
+        elif set(Phone).issubset(AllowedNum) == False:
+            # Every character in the name must be in the set of allowed characters.
+            print()
+            print("     User Entry Error - Phone number contains invalid characters.")
+            print()
+        else:
+            break
+    
+    while True:
+        try:
+            NumSnug = int(input("Enter the number of Snugglys ordered (1-20): ")) #If this line causes an error - it goes to except
+        except:
+            print()
+            print("     User Entry Error - Number of Snugglys must be an integer.")
+            print()
+        else:
+            # Value is valid, now check for the range.
+            if NumSnug < 1 or NumSnug > 20:
+                print()
+                print("     User Entry Error - Number of Snugglys must be between 1 and 20.")
+                print()
+            else:
+                break
+
+    while True:
+        MethPay = input("Enter the payment method (C)credit card (P)pay later: ").upper()
+        if MethPay == "":
+            print()
+            print("     User Entry Error - Payment method cannot be blank.")
+            print()
+        elif len(MethPay) != 1:
+            print()
+            print("     User Entry Error - Payment method must be one character.")
+            print()     
+        elif MethPay != "C" and MethPay != "P":
+            print()
+            print("     User Entry Error - Payment method must be C or P.")
+            print()
+        else:
+            break
+
+    # Perfrom required calculations
+
+
+
+    # Display results
+
+
+
+    # Write the values to a data file for starage
+
+
+
+
+
+    # Any housekeeping duties at the end of the program
